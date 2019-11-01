@@ -1,6 +1,5 @@
 package com.flowers.app.ws.service.impl;
 
-import java.nio.file.attribute.UserPrincipal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -27,7 +26,6 @@ import com.flowers.app.ws.service.UserService;
 import com.flowers.app.ws.shared.dto.UserDto;
 import com.flowers.app.ws.shared.dto.UsersDto;
 import com.flowers.app.ws.ui.model.response.ErrorMessages;
-import com.sun.tools.javac.main.Option;
 
 @Service
 public class UserServiceImpl implements UserService {

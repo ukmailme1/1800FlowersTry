@@ -1,28 +1,19 @@
 package com.flowers.app.ws.service.impl;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyInt;
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import org.apache.catalina.startup.ClassLoaderFactory.Repository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -31,10 +22,8 @@ import com.flowers.app.ws.exceptions.UserServiceException;
 import com.flowers.app.ws.io.entity.UserEntity;
 import com.flowers.app.ws.io.entity.UserEntityId;
 import com.flowers.app.ws.io.repository.UserRepository;
-import com.flowers.app.ws.service.UserService;
 import com.flowers.app.ws.shared.dto.UserDto;
 import com.flowers.app.ws.shared.dto.UsersDto;
-import com.flowers.app.ws.ui.model.response.ErrorMessages;
 
 class UserServiceImplTest {
 
