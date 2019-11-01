@@ -179,7 +179,7 @@ class UserServiceImplTest {
 		companies.add(userEntity);
 		Page<UserEntity> pagedResponse = new PageImpl<UserEntity>(companies);
 		Mockito.when(userRepository.findAll(any(Pageable.class))).thenReturn(pagedResponse);
-		Page<UserDto> pagedResponseDto=userService.getUsers(1, 20);
+		Page<UserDto> pagedResponseDto = userService.getUsers(1, 20);
 		assertEquals(pagedResponseDto.getTotalElements(), 1);
 		assertEquals(pagedResponseDto.getTotalPages(), 1);
 		assertEquals(pagedResponseDto.getContent().size(), 1);
@@ -187,19 +187,17 @@ class UserServiceImplTest {
 		assertEquals(pagedResponseDto.getContent().get(0).getUserId(), "userId");
 		assertEquals(pagedResponseDto.getContent().get(0).getBody(), "body");
 		assertEquals(pagedResponseDto.getContent().get(0).getTitle(), "title");
-		
-		
+
 	}
 
 	@Test
 	void testGetUsers_NoUsers() {
 		Mockito.when(userRepository.findAll(any(Pageable.class))).thenReturn(null);
-		
+
 		UserServiceException ex = assertThrows(UserServiceException.class, () -> {
-			userService.getUsers(1,1);
+			userService.getUsers(1, 1);
 		});
 		assertEquals(ex.getMessage(), "Record with provided id is not found");
-		
-		
+
 	}
 }
